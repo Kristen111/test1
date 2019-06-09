@@ -1,0 +1,187 @@
+body{
+    margin: 0;
+    padding: 0;
+}
+.setting-wrapper{
+    width: 1000px;
+    height: 663px;
+    margin: 0 auto;
+    padding: 25px 0;
+    font-size: 14px;
+    color: #666;
+}
+.setting-wrapper .setting-aside{
+    width: 220px;
+    height: 378px;
+    float: left;
+
+}
+
+.setting-aside a{
+    display: block;
+    width: 220px;
+    height: 46px;
+    line-height: 46px;
+    font-size: 14px;
+    border-radius: 3px;
+    margin-bottom: 8px;
+
+}
+.setting-aside a:hover{
+    background-color: #ffffff;
+}
+.setting-aside .active{
+    background-color: #ffa800;
+    color: #ffffff;
+}
+.setting-aside img{
+    width: 22px;
+    height: 22px;
+    display: inline-block;
+    margin: 0 10px 0 24px;
+    vertical-align: middle;
+}
+
+.tab-content {
+    width: 740px;
+    height: 613px;
+    padding-left: 40px;
+    float: right;
+    background: #fff;
+    /*border: 1px solid red;*/
+}
+.tab-content .hd{
+    width: 740px;
+    height: 50px;
+    padding-bottom: 18px;
+    margin: 0 0 20px 0;
+    border-bottom: 1px solid #eee;
+}
+.tab-content .hd strong{
+    font-size: 24px;
+    color: #444;
+    font-weight: normal;
+}
+.tab-content #d1 .userinfo{
+    width: 740px;
+    height: 487px;
+}
+.userinfo li,.userpass li{
+    padding-bottom: 15px;
+    width: 740px;
+    /*height: 47px;*/
+}
+
+.userinfo li label,.userpass li label{
+    display: block;
+    width: 85px;
+    float: left;
+    /*padding: 6px 10px 0 0;*/
+    text-align: right;
+    color: #a1a1a1;
+    font-size: 16px;
+}
+
+.userinfo li textarea,.userpass li textarea{
+    width: 472px;
+    height: 110px;
+    border: 1px solid #d3d3d3;
+    padding: 6px 8px;
+    line-height: 1.6em;
+    font-size: 14px;
+    color: #999;
+    outline: none;
+    border-radius: 3px;
+    resize: none;
+}
+.userinfo li a, .userpass li a{
+   color:#ffa800;
+}
+
+.userinfo .btn-sub button ,.userpass .btn-sub button{
+    width: 112px;
+    height: 36px;
+    display: block;
+    line-height: 36px;
+    background-color: #ffa800;
+    text-align: center;
+    font-size: 16px;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-left: 100px;
+}
+
+.userlogo{
+    width: 740px;
+    height: 260px;
+}
+
+.userlogo .avatar {
+    width: 120px;
+    height: 120px;
+    padding: 30px 0 20px;
+    position: relative;
+}
+.userlogo .btn-sub {
+    position: relative;
+    font-size: 12px;
+    margin-bottom: 10px;
+    /*border: 1px solid red;*/
+    margin-top: 46px;
+}
+
+.userlogo .btn-sub .btn-small,.btn2,.btn1{
+    width: 120px;
+    height: 36px;
+    line-height: 36px;
+    background-color: #ffa800;
+    text-align: center;
+    font-size: 16px ;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    vertical-align: middle;
+    margin-right: 12px;
+
+    display: inline-block;
+    cursor: pointer;
+}
+
+.input-hide{
+    position: absolute;
+    top: 320px;
+    left: 650px;
+    width: 120px;
+    height: 36px;
+    overflow: hidden;
+    z-index: 0;
+    /*border: 1px solid red;*/
+}
+
+.input-hide input{
+    font-size: 999px;
+    opacity: 0;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+}
+
+.userpass{
+    width: 560px;
+    height: 455px;
+}
+.btn-sub a.btn2 {
+    background-color: #eee;
+    color: #999;
+}
+
+.btn-sub a.btn1 {
+    background-color: #ffa800;
+    margin-left: 20px;
+    color: #ffffff;
+}
+

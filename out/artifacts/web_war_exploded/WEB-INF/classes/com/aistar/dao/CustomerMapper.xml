@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!-- namespace:dao 接口的类全名 包名.类名 -->
+<mapper namespace="com.aistar.dao.CustomerDao">
+
+    <!--  开启分布式缓存 ehcache -->
+    <cache type="org.mybatis.caches.ehcache.EhcacheCache"/>
+
+      <resultMap id="customer" type="com.aistar.entity.Customer">
+        <!--  主键列 映射 id -->
+        <id column="cust_id" property="custId"></id>
+        <result column="cust_name" property="custName"></result>
+        <result column="cust_pwd" property="custPwd"></result>
+        <result column="cust_gender" property="custGender"></result>
+        <result column="cust_telno" property="custTelno"></result>
+        <result column="cust_email" property="custEmail"></result>
+          <result column="cust_city" property="custCity"></result>
+          <result column="cust_sdasd" property="custSdasd"></result>
+          <result column="cust_country" property="custCountry"></result>
+          <result column="cust_birth" property="custBirth"></result>
+
+
+      </resultMap>
+
+
+    <!-- 根据主键查询用户对象
+         useCache="false" 禁用二级缓存，即每次都要查询数据库sql
+    -->
+    <select id="selectById" parameterType="int" resultMap="customer">
+	   select cust_id,cust_name,cust_pwd, cust_gender,cust_telno, cust_email,cust_city,cust_sdasd,cust_country,cust_birth
+       from customer
+       where cust_id = #{id} and cust_status =0
+	</select>
+
+    <select id="selectByCustTelno" parameterType="long" resultMap="customer">
+	   select cust_id,cust_name,cust_pwd, cust_gender,cust_telno, cust_email,cust_city,cust_sdasd,cust_country,cust_birth
+       from customer
+       where cust_telno = #{custTelno} and cust_status =0
+	</select>
+
+    <!--  根据用户名和密码查询用户对象  -->
+    <select id="selectByNameAndPwd" resultMap="customer">
+       select cust_id,cust_name,cust_pwd, cust_gender,cust_telno, cust_email,cust_city,cust_sdasd,cust_country,cust_birth
+       from customer
+       where cust_name=#{custName} and cust_Pwd=#{custPwd} and cust_status =0
+    </select>
+
+    <!--  根据电话号码和密码查询用户对象  -->
+    <select id="selectByTelnoAndPwd" resultMap="customer">
+       select cust_id,cust_name,cust_pwd, cust_gender,cust_telno, cust_email,cust_city,cust_sdasd,cust_country,cust_birth
+       from customer
+       where cust_telno=#{custTelno} and cust_Pwd=#{custPwd} and cust_status =0
+    </select>
+
+    <!--根据邮箱与密码查询用户-->
+    <select id="selectByEmailAndPwd" resultMap="customer">
+        select cust_id,cust_name,cust_pwd, cust_gender,cust_telno, cust_email,cust_city,cust_sdasd,cust_country,cust_birth
+        from customer
+        where cust_email =#{custEmail} and cust_pwd =#{custPwd} and cust_status =0
+    </select>
+
+
+
+
+     <select id="selectByLikeName" resultMap="customer">
+        select cust_name,cust_gender,cust_telno,cust_city,cust_sdasd,cust_country,cust_birth
+        from customer
+        where cust_name like "%"#{custName}"%" and cust_status=0
+    </select>
+
+    <!--  添加一个新用户 -->
+   <insert id="insert" parameterType="com.aistar.entity.Customer">
+        insert into customer(cust_name,cust_pwd, cust_gender,cust_telno, cust_email,cust_city,cust_sdasd,cust_country,cust_birth)
+        value (#{custName},#{custPwd},#{custGender},#{custTelno},#{custEmail})
+    </insert>
+
+    <update id="update">
+        update customer
+        <set>
+            <if test="custName !=null">cust_name = #{custName},</if>
+            <if test="custGender !=null">cust_gender = #{custGender},</if>
+            <if test="custBirth !=null">cust_birth = #{custBirth},</if>
+
+            <if test="custCity !=null">cust_city = #{custCity},</if>
+            <if test="custSdasd !=null">others1 = #{custSdasd}</if>
+        </set>
+        where cust_id = #{custId} and cust_status =0
+    </update>
+
+
+</mapper>

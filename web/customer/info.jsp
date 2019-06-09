@@ -1,0 +1,339 @@
+
+<%--
+  Created by IntelliJ IDEA.
+  User: admin
+  Date: 2019/4/3
+  Time: 9:19
+  To change this template use File | Settings | File Templates.
+--%>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+
+
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>个人中心</title>
+    <link rel="stylesheet" href="../dist/css/bootstrap.css">
+    <link rel="stylesheet" href="../dist/css/bootstrap-theme.css">
+    <link rel="stylesheet" href="../css/index.css">
+    <link rel="stylesheet" href="../css/footer.css">
+    <link rel="stylesheet" href="../css/setting.css">
+    <script src="../dist/js/jquery-3.3.1.min.js"></script>
+    <script src="../dist/js/bootstrap.js"></script>
+    <link rel="icon" href="../images/M-icon.png">
+
+    <style>
+        .header_nav{
+            width: 1100px;
+            height: 58px;
+            font-size: 14px;
+            line-height: 58px;
+            display: inline;
+            text-align: center;
+            float: left;
+        }
+        .header_nav li img{
+            border-radius: 50%;
+            width: 20px;
+            height: 20px;
+        }
+    </style>
+
+
+</head>
+<body>
+
+<div class="header">
+    <div class="header-logo">
+        <a class="mfw-logo" href="../index.jsp" target="_blank"></a>
+    </div>
+    <ul class="header_nav">
+        <li class="first"><a  href="">首页</a></li>
+        <li><a href="destination.html">目的地</a></li>
+        <li><a href="gonglve.html">旅游攻略</a></li>
+        <li><a href="javascript:;">旅行商城</a>
+            <ul class="second-down-menu">
+                <li><a href="">自由行</a></li>
+                <li><a href="">跟团游</a></li>
+                <li><a href="">当地游</a></li>
+                <li><a href="">国内机票</a></li>
+                <li><a href="">签证</a></li>
+            </ul>
+        </li>
+        <li><a href="">酒店</a></li>
+        <li><a href="">社区</a>
+            <ul class="second-down-menu">
+                <li><a href="">问答</a></li>
+                <li><a href="">马蜂窝周边</a></li>
+                <li><a href="">蜂首俱乐部</a></li>
+                <li><a href="">结伴</a></li>
+            </ul>
+        </li>
+        <li><a href="">打卡</a></li>
+        <li><a href="">消息</a>
+            <ul class="second-down-menu">
+                <li><a href="">私信</a></li>
+                <li><a href="">小组消息</a></li>
+                <li><a href="">系统通知</a></li>
+                <li><a href="">问答信息</a></li>
+                <li><a href="">回复消息</a></li>
+                <li><a href="">喜欢与收藏</a></li>
+                <li><a href="">好友动态</a></li>
+            </ul></li>
+        <li><a href=""><img src="../images/user1.jpeg"></a>
+            <ul class="second-down-menu">
+                <li><a href="javascript:;">蜂窝0/金币0</a></li>
+                <li><a href="my-mfw.html">我的马蜂窝</a></li>
+                <li><a href="write-youji.html">写游记</a></li>
+                <li><a href="">预约游记</a></li>
+                <li><a href="">我的足迹</a></li>
+                <li><a href="">我的问答</a></li>
+                <li><a href="">我的好友</a></li>
+                <li><a href="">我的收藏</a></li>
+                <li><a href="">我的路线</a></li>
+                <li><a href="">我的订单</a></li>
+                <li><a href="">我的优惠券</a></li>
+                <li><a href="../setting.html">设置</a></li>
+            </ul></li>
+    </ul>
+</div>
+<div class="setting-wrapper">
+    <div class="setting-aside nav-tabs">
+        <a href="#d1" class="active"  data-toggle="tab"><img src="../images/message-b-22.svg">我的信息</a>
+        <a href="#d2" data-toggle="tab"><img src="../images/touxiang-22.svg">我的头像</a>
+        <a href="#d3" data-toggle="tab"><img src="../images/bind-22.svg">绑定设置</a>
+        <a href="#d4" data-toggle="tab"><img src="../images/safe-22.svg">账号安全</a>
+        <a href="#d5" data-toggle="tab"><img src="../images/wo-setting.svg">我的窝设置</a>
+        <a href="#d6" data-toggle="tab"><img src="../images/balackList-22.svg">黑名单管理</a>
+        <a href="#d7" data-toggle="tab"><img src="../images/pocket-22.svg">我的钱包</a>
+    </div>
+    <div class="tab-content">
+        <div id="d1" class="tab-pane active">
+            <div class="hd">
+                <strong>我的信息</strong>
+            </div>
+            <div class="userinfo">
+                <form action="" method="post">
+                    <ul>
+                        <li><label>名号：</label>
+                            <input type="text" name="username" value="${customer.custName}">
+                        </li>
+                        <li><label>性别：</label>
+                            <c:if test="${customer.custGender == 'M'}">
+                                <input  type="radio" name="gender" value="M"  checked="true"> 男
+                                <input  type="radio" name="gender" value="F" >  女
+
+                            </c:if>
+                            <c:if test="${customer.custGender == 'F'} ">
+                                <input  type="radio" name="gender" value="M"  > 男
+                                <input  type="radio" name="gender" value="F" checked="true">  女
+
+                            </c:if>
+
+                        </li>
+                        <li><label>居住城市：</label>
+                            <input type="text" name="city" value="${customer.custCity}">
+                        </li>
+                        <li><label>出生日期：</label>
+                            <input type="date" name="birth" value="${customer.custBirth}">
+                            <%--             <fmt:parseDate value="${customer.custBirth}" var="custBirth" pattern="yyyy/MM/dd"/>
+
+                                         <fmt:formatDate value="${custBirth}" pattern="yyyy/MM/dd"/>
+                            --%>
+                                      <fmt:formatDate value="${customer.custBirth}" pattern="yyyy/MM/dd"></fmt:formatDate>
+                                    </li>
+                        <li><label>个人简介：</label>
+                            <textarea name="desc" value="${customer.custSdasd}"  placeholder="例：摄影师/旅居澳洲/潜水爱好者" maxlength="100"></textarea>
+                        </li>
+                        <li><label>收货地址：</label>
+                            <a href="#d8" data-toggle="tab">新增收货地址</a>
+                        </li>
+                    </ul>
+                    <div class="btn-sub">
+                        <input type="button" class="updateBtn" value="保存" >
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div id="d2"  class="tab-pane">
+            <div class="hd">
+                <strong>我的头像</strong>
+            </div>
+            <div class="userlogo">
+                <div class="avatar">
+                    <img src="../images/user-null.png">
+                </div>
+                <div class="btn-sub">
+                    <div class="btn-small">选择图片</div>支持jpg、png、jpeg、bmp，图片大小5M以内
+                </div>
+                <div class="input-hide">
+                    <input type="file">
+                </div>
+            </div>
+        </div>
+        <div id="d3"  class="tab-pane">绑定设置</div>
+        <div id="d4"  class="tab-pane">
+            <div class="hd">
+                <strong>账号安全</strong>
+            </div>
+            <div class="userpass">
+                <form action="" method="post">
+                    <ul>
+                        <li><label>手机号：</label>
+                            <input type="text" name="name">
+                        </li>
+                        <li><label>原密码：</label>
+                            <input type="password" name="psw">
+                        </li>
+                        <li><label>新密码：</label>
+                            <input type="password" name="new_psw">
+                        </li>
+                        <li><label>确认密码：</label>
+                            <input type="password" name="identify_psw">
+                        </li>
+                        <li><label>居住城市：</label>
+                            <input type="text" name="city">
+                        </li>
+                        <li><label>出生日期：</label>
+                            <input type="date" name="birthday">
+                        </li>
+                        <li><label>个人简介：</label>
+                            <textarea name="intro" placeholder="例：摄影师/旅居澳洲/潜水爱好者" maxlength="100"></textarea>
+                        </li>
+                        <li><label>收货地址：</label>
+                            <a href="#d8" data-toggle="tab">修改收货地址</a>
+                        </li>
+                    </ul>
+                    <div class="btn-sub">
+                        <button type="submit">修改</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div id="d5"  class="tab-pane">我的窝设置</div>
+        <div id="d6"  class="tab-pane">黑名单管理</div>
+        <div id="d7"  class="tab-pane">我的钱包</div>
+        <div id="d8"  class="tab-pane">
+            <div class="hd">
+                <strong>账号安全</strong>
+            </div>
+            <div class="userpass">
+                <form action="" method="post">
+                    <ul>
+                        <li>
+                            <label>姓名：</label>
+                            <input type="text" name="user_name">
+                        </li>
+                        <li>
+                            <label>所在地区：</label>
+                            <select class="province">
+                                <option>请选择</option>
+                            </select>
+                            <select class="city">
+                                <option>请选择</option>
+                            </select>
+                        </li>
+                        <li>
+                            <label>详细地址：</label>
+                            <textarea name="address"></textarea>
+                        </li>
+                        <li>
+                            <label>手机号码：</label>
+                            <input type="text" name="mobile">
+                        </li>
+                        <li>
+                            <label>邮政编码：</label>
+                            <input type="text" name="zipcode">
+                        </li>
+                        <li>
+                            <input type="radio" name="is_default">设置为默认收货地址
+                        </li>
+
+                    </ul>
+                </form>
+                <ul>
+                    <li class="btn-sub">
+                        <a href="" class="btn2">取消</a>
+                        <a href="" class="btn1">保存</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+
+<!-- footer -->
+<div class="footer">
+    <div class="footer-content">
+        <div class="ft-info">
+            <ul class="ft-info-intro">
+                <li class="big-font">全球旅游消费指南 </li>
+                <li>覆盖全球200多个国家和地区</li>
+                <li><span>100,000,000</span> 位旅行者</li>
+                <li><span>920,000</span> 家国际酒店</li>
+                <li><span>21,000,000</span> 条真实点评</li>
+                <li><span>382,000,000</span> 次攻略下载</li>
+                <li><a href="">马蜂窝全球自由行“玩法”</a></li>
+            </ul>
+            <ul class="ft-info-about">
+                <li class="big-font">关于我们</li>
+                <li><a href="">关于马蜂窝</a><a href="">联系我们</a></li>
+                <li><a href="">隐私政策</a><a href="">商标声明</a></li>
+                <li><a href="">服务协议</a><a href="">游记协议</a></li>
+                <li><a href="">商城平台服务协议</a></li>
+                <li><a href="">网络信息侵权通知指引</a></li>
+                <li><a href="">网站地图</a><a class="highlight" href="">加入马蜂窝</a></li>
+            </ul>
+            <ul class="ft-info-service">
+                <li class="big-font">旅行服务</li>
+                <li><a href="">旅游攻略</a><a href="">酒店预订</a></li>
+                <li><a href="">旅游特价</a><a href="">国际租车</a></li>
+                <li><a href="">旅游问答</a><a href="">旅游保险</a></li>
+                <li><a href="">旅游指南</a><a href="">订火车票</a></li>
+                <li><a href="">旅游资讯</a><a href="">APP下载</a></li>
+                <li><a class="highlight" href="">旅行商城全球商家入驻</a></li>
+            </ul>
+            <ul class="ft-info-qrcode">
+                <li>
+                    <img src="../images/APP.png">
+                    <p>马蜂窝良品<br>官方服务号</p>
+                </li>
+                <li>
+                    <img src="../images/APP.png">
+                    <p>马蜂窝旅游<br>订阅号</p>
+                </li>
+                <li class="">
+                    <img src="../images/APP.png">
+                    <p>马蜂窝APP<br>扫描立即下载</p>
+                </li>
+            </ul >
+            <ul class="ft-info-social">
+                <li><span>向崇尚自由的加勒比海盗致敬！</span></li>
+                <a href=""><img src="../images/weibo.svg"></a>
+                <a href=""><img src="../images/weibo.svg"></a>
+                <a href=""><img src="../images/weibo.svg"></a>
+            </ul>
+
+
+        </div>
+        <div class="footer-copyright">
+            <a><img src="../images/weibo.svg"></a>
+            <p>© 2019 Mafengwo.cn 京ICP备11015476号 京公网安备11010502013401号</p>
+            <p>网络出版服务许可证：(总)网出证(京)字第161号</p>
+
+        </div>
+        <div class="footer-safety">
+
+        </div>
+    </div>
+</div>
+<script src="../js/setting.js"></script>
+<script src="../js/customer/update.js"></script>
+</body>
+</html>

@@ -1,0 +1,328 @@
+body,ul{
+    margin: 0;
+    padding: 0;
+}
+
+
+/******  banner  *********************/
+.banner{
+    width: 100%;
+    /*height: 220px;*/
+   border: 1px solid #ffffff;
+}
+.banner_first{
+    width: 1200px;
+    height: 220px;
+    border: 1px solid #ffffff;
+    margin: 0 auto;
+}
+
+/********** 目的地 导航菜单 ************/
+.destination_nav > li + li:before {
+    color: #CCCCCC;
+    content: "> ";
+    padding: 0 5px;
+    float: left;
+}
+
+
+.dest_nav >ul >li{
+    list-style: none;
+    float: left;
+}
+
+.dest_nav >ul >li>a{
+    text-decoration: none;
+    font-size: 12px;
+    display: block;
+    width: 80px;
+    height: 20px;
+    color: #000000;
+    text-align: center;
+
+
+/*line-height: 20px;*/
+
+}
+.dest_nav >ul >li>a:hover{
+    color: #ff9d00;
+}
+.dest_nav >ul >li>a:hover+ul{
+    display: block;
+}
+
+.dest_nav>ul>li>a+ul{
+    position: absolute;
+}
+.gaikuang_nav>ul>li>a+div{
+    position: absolute;
+}
+
+.second-down-menu{
+    width: 80px;
+
+    text-align: center;
+    display: none;
+
+}
+.second-down-menu li{
+    list-style: none;
+
+}
+.second-down-menu li a{
+    color: #000000;
+    font-size: 10px;
+    text-decoration: none;
+    /*position: absolute;*/
+}
+
+.second-down-menu:hover{
+    display: block;
+}
+.second-down-menu li a:hover{
+    color: #ff9d00;
+}
+
+h1{
+    margin-top: 60px;
+    margin-left: 20px;
+
+}
+
+
+
+
+/****** gaikuang_nav **********/
+
+.gaikuang_nav >ul >li{
+    list-style: none;
+    float: left;
+
+}
+
+.gaikuang_nav >ul >li>a{
+    text-decoration: none;
+    font-size: 18px;
+    display: block;
+    width: 80px;
+    height: 20px;
+    color: #000000;
+    text-align: center;
+
+
+    /*line-height: 20px;*/
+
+}
+.gaikuang_nav >ul >li>a:hover{
+    color: #ff9d00;
+}
+.gaikuang_nav >ul >li>a:hover+ul{
+    display: block;
+}
+
+.gaikuang_nav>ul>li>a+ul{
+    position: absolute;
+}
+
+
+.second-down-menu_second{
+    width: 80px;
+    text-align: center;
+    display: none;
+}
+.second-down-menu_second li{
+    list-style: none;
+
+}
+.second-down-menu_second li a{
+    color: #000000;
+    font-size: 14px;
+    text-decoration: none;
+    /*position: absolute;*/
+}
+
+.second-down-menu_second:hover{
+    display: block;
+}
+.second-down-menu_second li a:hover{
+    color: #ff9d00;
+}
+
+/***************  circuit *******************/
+.circuit{
+    width: 100%;
+}
+.circuit_first{
+    width: 1200px;
+    height: 400px;
+    margin: 0 auto;
+    /*border: 1px solid #000000;*/
+}
+h3{
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.circuit_left{
+    width: 550px;
+    height: 300px;
+  /*  border: 1px solid #000000;*/
+    float: left;
+}
+.circuit_right{
+    width: 550px;
+    height: 300px;
+ /*   border: 1px solid #000000;*/
+    float: right;
+}
+.circuit_first span{
+    font-size: 20px;
+    margin-left: 30px;
+   /* text-decoration: none;*/
+}
+.circuit_first span:hover{
+    color: #ff9d00;
+}
+.circuit_first a{
+    font-size: 18px;
+    text-decoration: none;
+    color: #000000;
+}
+
+/***********  feature **************/
+.feature{
+    width: 100%;
+}
+.feature_first{
+    width: 1200px;
+    height: 450px;
+    margin: 0 auto;
+   /* border: 1px solid #000000;*/
+}
+.feature_first_one{
+    width: 300px;
+    height: 400px;
+  /*  border: 1px solid #000000;*/
+    float: left;
+    margin-left: 40px;
+}
+.feature_first_one img{
+    width: 300px;
+    height: 200px;
+}
+.feature_first_one a{
+    text-decoration: none;
+}
+.feature_first_one a span{
+    display: block;
+    font-size: 16px;
+    margin-top: 20px;
+    color: #000000;
+}
+.feature_first_one a span:hover{
+    color: #ff9d00;
+}
+
+/********  independent  *************/
+.independent{
+    width: 100%;
+}
+.independent_first{
+    width: 1200px;
+    height: 350px;
+    margin: 0 auto;
+  /*  border: 1px solid #000000;*/
+}
+.independent_first_one{
+    width: 350px;
+    height: 260px;
+   /* border: 1px solid #000000;*/
+    float: left;
+    margin-left: 40px;
+}
+
+
+/**********  grogshop **************/
+.grogshop{
+    width: 100%;
+}
+.grogshop_first{
+    width: 1200px;
+    height: 450px;
+    margin: 0 auto;
+   /* border: 1px solid #000000;*/
+}
+.grogshop_first_one{
+    width: 310px;
+    height:360px;
+   /* border: 1px solid #000000;*/
+    float: left;
+    margin-left: 40px;
+}
+.grogshop_first_one h3{
+    margin-top: -200px;
+    text-align: center;
+    color: #ffffff;
+}
+.grogshop_first_one span{
+    display: block;
+    margin-top: 60px;
+    text-align: center;
+    color: #ffffff;
+}
+
+/**********  travel_notes **************/
+.travel_notes{
+    width: 100%;
+}
+.travel_notes_first{
+    width: 1200px;
+    height: 450px;
+    margin: 0 auto;
+  /*  border: 1px solid #000000;*/
+}
+
+/*************  btn-group  *************/
+.btn-group{
+    height: 10px;
+    margin-top: 50px;
+    margin-left: -60px;
+    margin-right: 60px;
+}
+/*************************/
+
+.travel_notes_first h3{
+    /*float: left;*/
+}
+.note_one{
+    width: 1000px;
+    height: 200px;
+ /*   border: 1px solid #000000;*/
+    margin-top: 60px;
+    color: #000000;
+}
+.note_one a{
+    display: block;
+    text-decoration: none;
+    color: #000000;
+    margin-top: 20px;
+}
+.note_left{
+    float: left;
+}
+.note_right{
+    width: 750px;
+    float: right;
+}
+.note_right span {
+    font-size: 18px;
+    text-decoration: none;
+}
+.note_right span:hover {
+    color: #ff9d00;
+}
+
+
+
+
+
+
